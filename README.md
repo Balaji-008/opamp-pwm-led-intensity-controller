@@ -41,19 +41,19 @@ graph TD
     Ref6V -->|Hysteresis Reference| Stage1
     Ref6V -->|Integration Reference| Stage2
     
-    Stage1 -->|Square Wave (~10.5V to ~0.1V)| Stage2
-    Stage2 -->|Linear Triangle Wave (4.03V to 7.50V)| Stage3
+    Stage1 -->|"Square Wave (~10.5V to ~0.1V)"| Stage2
+    Stage2 -->|"Linear Triangle Wave (4.03V to 7.50V)"| Stage3
     
     %% Sensor input
     subgraph SensorInput["Sensor Input Circuit"]
         LDR["LDR (Light Dependent Resistor)"] --> DivLDR["LDR + 45kΩ Resistor Divider"]
-        DivLDR -->|Variable Voltage (V_sense)| Stage3
+        DivLDR -->|"Variable Voltage (V_sense)"| Stage3
     end
 
     %% Output
     subgraph Driver["Power Driver & Load"]
-        Stage3 -->|PWM Signal (Variable Duty)| Stage4["Stage 4: 2N7000 MOSFET Driver"]
-        Stage4 -->|Controlled Current (21mA)| LED["Indicator LED (Ambient Dimming)"]
+        Stage3 -->|"PWM Signal (Variable Duty)"| Stage4["Stage 4: 2N7000 MOSFET Driver"]
+        Stage4 -->|"Controlled Current (21mA)"| LED["Indicator LED (Ambient Dimming)"]
     end
 
     %% Feedback loop between Schmitt and Integrator
