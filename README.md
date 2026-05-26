@@ -2,9 +2,11 @@
 
 > A fully microcontroller-free ambient light controller that automatically dims an LED using Pulse Width Modulation — built entirely from a single LM324 quad op-amp IC and passive components.
 
-<!-- 📸 Add circuit photo: ![Circuit Photo](docs/images/circuit_photo.jpg) -->
+### 🔌 Complete System Schematic Diagram
 
-![Circuit Schematic](Analog_PWM_LED_Circuit.png)
+The active hardware schematic layout is integrated below. A vector-precision PDF version of this circuit layout is available at: 📄 **[opamp_pwm_led_schematic.pdf](opamp_pwm_led_schematic.pdf)** and the LTspice simulation model is available at: 🔬 **[opamp_pwm_led_simulation.asc](opamp_pwm_led_simulation.asc)**
+
+![Op-Amp PWM LED Intensity Controller Schematic](images/opamp_pwm_led_schematic.png)
 
 ---
 
@@ -157,12 +159,12 @@ Compatible with **LTspice** and **KiCad (ngspice)**:
 ## 📁 Project Structure
 
 ```
-analog-pwm-led-controller/
-├── Analog_PWM_LED_Circuit.png   ← Generated circuit schematic
-├── generate_schem.py            ← Python schemdraw script (127 lines)
-├── project_one_pager.md         ← Complete technical documentation
-├── test_opamp.py                ← Minimal schemdraw test
-└── README.md
+opamp-pwm-led-intensity-controller/
+├── opamp_pwm_led_schematic.pdf    ← Complete hardware circuit schematic (PDF)
+├── opamp_pwm_led_simulation.asc   ← LTspice circuit simulation schematic
+├── images/
+│   └── opamp_pwm_led_schematic.png ← High-resolution schematic preview image
+└── README.md                      ← Project documentation
 ```
 
 ---
@@ -175,12 +177,6 @@ analog-pwm-led-controller/
 4. Check for a square wave on LM324-A output (Pin 1)
 5. Check for a triangle wave on LM324-B output (Pin 7)
 6. Vary lighting → LED brightness should change proportionally
-
-### Generate the Schematic
-```bash
-pip install schemdraw
-python generate_schem.py
-```
 
 ---
 
